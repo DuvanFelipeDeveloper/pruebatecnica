@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PrestamoController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SaldoController;
 use App\Http\Controllers\StoreController;
@@ -52,6 +53,12 @@ Route::middleware('auth')->group(function(){
 Route::middleware('auth')->group(function(){
     Route::get('/cajero',[SaldoController::class,'cajero'])->name('cajero');
     Route::post('/cajero',[SaldoController::class,'retiro'])->name('cajero.retiro');
+
+});
+
+Route::middleware('auth')->group(function(){
+    Route::get('/prestamo',[PrestamoController::class,'prestamo'])->name('prestamo');
+    Route::post('/prestamo',[PrestamoController::class,'solicitar'])->name('prestamo.solicitar');
 
 });
 

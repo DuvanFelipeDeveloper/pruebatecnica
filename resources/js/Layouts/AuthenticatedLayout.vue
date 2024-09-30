@@ -63,6 +63,13 @@ const showingNavigationDropdown = ref(false);
                                 >
                                     Cajero
                                 </NavLink>
+
+                                <NavLink
+                                    :href="route('prestamo')"
+                                    :active="route().current('prestamo')"
+                                >
+                                    Libreria
+                                </NavLink>
                             </div>
                         </div>
 
